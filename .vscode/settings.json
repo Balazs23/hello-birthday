@@ -1,0 +1,32 @@
+{
+  "python.formatting.provider": "black",
+  "editor.rulers": [
+    88
+  ],
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.envFile": "${workspaceFolder}/.env",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "python.testing.pytestEnabled": true,
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    ".venv/": false,
+    ".pytest_cache/": true,
+    ".mypy_cache/": true
+  },
+  "python.linting.mypyArgs": [
+    "--config-file=${workspaceFolder}/mypy.ini",
+    "--no-pretty"
+  ],
+  "python.languageServer": "Pylance",
+  "python.linting.pydocstyleArgs": [
+    "--config=./.pydocstyle"
+  ],
+  "python.analysis.extraPaths": [
+    "/home/vscode/.local/lib/python3.10/site-packages"
+  ],
+  "python.defaultInterpreterPath": "/usr/local/bin/python"
+}
