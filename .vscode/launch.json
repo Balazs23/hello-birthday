@@ -5,13 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "FastAPI",
+            "name": "FastAPI - NoSQL",
             "type": "python",
             "request": "launch",
             "module": "uvicorn",
-            "env": {
-                "MONGO_URI": "mongodb://mongo:27017/",
-            },
+            "args": [
+                "--app-dir",
+                "./src/",
+                "api:app",
+                "--reload",
+                "--port",
+                "8000"
+            ]
+        },
+        {
+            "name": "FastAPI - PSQL",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "envFile": "${workspaceFolder}/.devcontainer/devcontainer.env",
             "args": [
                 "--app-dir",
                 "./src/",

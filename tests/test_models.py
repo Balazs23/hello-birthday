@@ -2,29 +2,28 @@ import unittest
 from datetime import date, datetime
 
 import pytest
-from models.user import User, UserModel
-
+from models.user import User
 
 # MongoDB
-class TestUserModel(unittest.TestCase):
-    """UserModel object"""
+# class TestUserModel(unittest.TestCase):
+#     """UserModel object"""
 
-    mock_username = "johndoe"
-    mock_username_int = "johndoe12"
+#     mock_username = "johndoe"
+#     mock_username_int = "johndoe12"
 
-    def test_username_int(self):
-        """username contains integer"""
+#     def test_username_int(self):
+#         """username contains integer"""
 
-        # user object birthdate can be on the same day!
-        with pytest.raises(ValueError):
-            UserModel(username=self.mock_username_int, dateOfBirth=datetime.today())
+#         # user object birthdate can be on the same day!
+#         with pytest.raises(ValueError):
+#             UserModel(username=self.mock_username_int, dateOfBirth=datetime.today())
 
-    def test_username(self):
-        user = UserModel(username=self.mock_username, dateOfBirth=datetime.today())
-        self.assertEqual(
-            self.mock_username,
-            user.username,
-        )
+#     def test_username(self):
+#         user = UserModel(username=self.mock_username, dateOfBirth=datetime.today())
+#         self.assertEqual(
+#             self.mock_username,
+#             user.username,
+#         )
 
 
 # PSQL

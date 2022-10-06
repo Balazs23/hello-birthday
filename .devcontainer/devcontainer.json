@@ -40,7 +40,7 @@
 			"extensions": [
 				"ms-python.python",
 				"ms-python.vscode-pylance",
-				"mongodb.mongodb-vscode"
+				"ckolkman.vscode-postgres"
 			]
 		}
 	},

@@ -1,7 +1,8 @@
 from datetime import datetime
 
 from fastapi.exceptions import RequestValidationError
-from odmantic import Model
+
+# from odmantic import Model
 from pydantic import StrictStr, ValidationError, validator
 from pydantic.error_wrappers import ErrorWrapper
 from settings import Base
@@ -42,15 +43,15 @@ class User(Base):
 
 # MONGODB
 # pylint: disable=E0213
-class UserModel(Model):
-    """User model"""
+# class UserModel(Model):
+#     """User model"""
 
-    username: StrictStr
-    dateOfBirth: datetime
+#     username: StrictStr
+#     dateOfBirth: datetime
 
-    @validator("username")
-    def check_username(cls, value):
-        """username must contain only letters"""
-        if not value.isalpha():
-            raise ValueError("username must contain only letters")
-        return value
+#     @validator("username")
+#     def check_username(cls, value):
+#         """username must contain only letters"""
+#         if not value.isalpha():
+#             raise ValueError("username must contain only letters")
+#         return value

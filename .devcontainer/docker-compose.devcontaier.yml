@@ -2,13 +2,15 @@ version: "3"
 
 services:
 
-  mongo:
-    image: mongo
-    restart: always
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: always
+  psql:
+    image: postgres:13-alpine
+    # only for local dev env, no need to keep persistent data
+    # volumes:
+    #   - postgres_data:/var/lib/postgresql/data/
+    expose:
+      - 5432
+    env_file:
+      - devcontainer.env
 
   hello-microservice:
     restart: always
@@ -19,7 +21,7 @@ services:
         VARIANT: 3.10-bullseye
         NODE_VERSION: lts/*
     depends_on:
-      - mongo
+      - psql
     command: /bin/sh -c "while sleep 1000; do :; done"
     volumes:
       # Mounts the project folder to '/workspace'. The target path inside the container
@@ -28,15 +30,3 @@ services:
       # 'workspaceFolder' in '.devcontainer/devcontainer.json' so VS Code starts here.
       - ..:/workspace:cached
     user: vscode
-    environment:
-      - PYTHONUNBUFFERED=1
-      - MODE=dev
-      - MONGO_URL=mongo
-      - MONGO_PORT=27017
-      - SERVER_URL=0.0.0.0
-      - ADMIN_USERNAME=admin
-      - ADMIN_PASSWORD=pass
-      - PORT=2020
-
-    ports:
-      - "2020:2020"

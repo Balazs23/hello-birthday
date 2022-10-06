@@ -1,6 +1,6 @@
 from datetime import date
 
-from models.user import User, UserModel
+from models.user import User
 
 # from odmantic import AIOEngine
 from sqlalchemy.orm import Session

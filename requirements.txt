@@ -4,11 +4,3 @@ uvicorn
 # psql
 psycopg2-binary
 SQLAlchemy
-
-# mongodb
-# odmantic
-
-# connexion[swagger-ui]
-# Flask-Injector
-# injector
-# flask_cors
