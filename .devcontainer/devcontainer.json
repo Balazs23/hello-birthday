@@ -40,6 +40,7 @@
 			"extensions": [
 				"ms-python.python",
 				"ms-python.vscode-pylance",
+				"qwtel.sqlite-viewer",
 				"ckolkman.vscode-postgres"
 			]
 		}
