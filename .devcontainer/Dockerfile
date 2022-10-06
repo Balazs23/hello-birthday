@@ -10,6 +10,11 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/
 COPY library-scripts/terraform-debian.sh /tmp/library-scripts/
 RUN apt-get update && bash /tmp/library-scripts/terraform-debian.sh
 
+# # install gcloud sdk
+RUN curl https://sdk.cloud.google.com > /home/vscode/install.sh \
+    && bash /home/vscode/install.sh --disable-prompts \
+    && echo 'export PATH="/home/vscode/google-cloud-sdk/bin:$PATH"' >> /home/vscode/.bashrc
+
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
 # COPY requirements.txt /tmp/pip-tmp/
 # RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \

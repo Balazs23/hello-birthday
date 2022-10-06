@@ -1,3 +1,3 @@
 locals {
-    gcp_project_id = "nb-hello-birthday"
+    gcp_project_id = "hello-birthday-364708"
 }

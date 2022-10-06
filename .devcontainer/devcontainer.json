@@ -41,7 +41,8 @@
 				"ms-python.python",
 				"ms-python.vscode-pylance",
 				"qwtel.sqlite-viewer",
-				"ckolkman.vscode-postgres"
+				"ckolkman.vscode-postgres",
+				"hashicorp.terraform"
 			]
 		}
 	},

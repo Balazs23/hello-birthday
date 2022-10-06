@@ -7,3 +7,8 @@ __pycache__/
 *.db
 
 .coverage
+
+# terraform
+.terraform
+**/.terraform.lock.hcl
+**/.terragrunt-cache
