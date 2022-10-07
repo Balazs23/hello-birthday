@@ -1,0 +1,20 @@
+name: Checks
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Checks
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+    - run: pip install --upgrade pip
+    # stability policy https://black.readthedocs.io/en/stable/the_black_code_style/index.html
+    - run: pip install "black<23" pylint==v3.0.0a3 mypy==v0.902 Flake8
+    - run: black --diff --check $(git ls-files '*.py')
+    # - run: pylint --disable=all --enable=unused-import $(git ls-files '*.py')
+    - run: pylint --disable=all $(git ls-files '*.py')
+    - run: mypy $(git ls-files '*.py')
+    - run: flake8 src/ tests/

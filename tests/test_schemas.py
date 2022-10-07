@@ -13,7 +13,7 @@ class TestHelloSchema(unittest.TestCase):
     mock_username = "johndoe"
     timedelta = 1
 
-    def test_hello_birthday(self):
+    def test_hello_birthday(self) -> None:
         """birthday day"""
         hello = HelloResponse.from_user_instance(
             User(username=self.mock_username, dateofbirth=date.today())
@@ -21,7 +21,7 @@ class TestHelloSchema(unittest.TestCase):
 
         self.assertEqual(hello.message, f"Hello, {self.mock_username}! Happy birthday!")
 
-    def test_hello_not_birthday(self):
+    def test_hello_not_birthday(self) -> None:
         """non birthday day"""
         hello = HelloResponse.from_user_instance(
             User(
@@ -49,7 +49,7 @@ class TestSetUserSchema(unittest.TestCase):
 
     date_format = "%Y-%m-%d"
 
-    def test_wrong_date_format(self):
+    def test_wrong_date_format(self) -> None:
         """wrong date() formats"""
 
         for wrong in self.wrong_date_formats:
@@ -57,13 +57,13 @@ class TestSetUserSchema(unittest.TestCase):
                 dt = date.today() - timedelta(days=1)
                 SetUser(dateOfBirth=dt.strftime(wrong))
 
-    def test_date_today(self):
+    def test_date_today(self) -> None:
         """can not set current day as birthday"""
         with pytest.raises(ValueError):
             dt = date.today()
             SetUser(dateOfBirth=dt.strftime(self.date_format))
 
-    def test_date(self):
+    def test_date(self) -> None:
         dt = date.today() - timedelta(days=1)
         request = SetUser(dateOfBirth=dt.strftime(self.date_format))
         self.assertEqual(
