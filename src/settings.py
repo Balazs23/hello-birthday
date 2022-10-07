@@ -1,22 +1,17 @@
 import os
 from typing import Optional
 
+import pg8000
 from google.cloud.sql.connector import Connector, IPTypes
 
 # from odmantic.fastapi import AIOEngineDependency
 from pydantic import BaseSettings
-from pydantic.types import SecretStr
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
 class _Settings(BaseSettings):
-    SECRET_KEY: SecretStr = (
-        "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
-    )
-    ALGORITHM = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES = 30
     if os.environ.get("K_SERVICE"):
         # gcp cloud run instance
         INSTANCE_CONNECTION_NAME: str  # 'project:region:instance'
@@ -36,7 +31,7 @@ SETTINGS = _Settings()
 # PSQL
 
 
-def getconn():
+def getconn() -> pg8000.dbapi.Connection:
     """cloud sql connector settings"""
     with Connector() as connector:
         conn = connector.connect(

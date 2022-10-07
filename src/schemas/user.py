@@ -1,4 +1,5 @@
 from datetime import date, datetime
+from typing import Any
 
 from pydantic import validator
 
@@ -12,7 +13,7 @@ class SetUser(BaseSchema):
     dateOfBirth: date
 
     @validator("dateOfBirth", pre=True)
-    def check_birthdate(cls, value):
+    def check_birthdate(cls, value: Any) -> datetime:
         """YYYY-MM-DD must be a date before the today date"""
         dateOfBirth = datetime.strptime(value, "%Y-%m-%d")
         if date.today() <= dateOfBirth.date():

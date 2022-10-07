@@ -11,7 +11,7 @@ class UserNotFoundException(HTTPException):
 class InvalidValueException(HTTPException):
     """Response for non valid parameter usage"""
 
-    def __init__(self, detail) -> None:
+    def __init__(self, detail: str) -> None:
         super().__init__(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=detail
         )

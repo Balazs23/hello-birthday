@@ -1,9 +1,7 @@
-from datetime import datetime
+from datetime import date
+from typing import Any
 
 from fastapi.exceptions import RequestValidationError
-
-# from odmantic import Model
-from pydantic import StrictStr, ValidationError, validator
 from pydantic.error_wrappers import ErrorWrapper
 from settings import Base
 from sqlalchemy import Column, Date, DateTime, Integer, String
@@ -11,7 +9,7 @@ from sqlalchemy.orm import validates
 from sqlalchemy.sql import func
 
 
-class User(Base):
+class User(Base):  # type: ignore
     """User ORM Class"""
 
     __tablename__ = "users"
@@ -21,12 +19,12 @@ class User(Base):
     dateofbirth = Column(Date, nullable=False)
     created_date = Column(DateTime, default=func.now(), nullable=False)
 
-    def __init__(self, username, dateofbirth):
+    def __init__(self, username: str, dateofbirth: date):
         self.username = username
         self.dateofbirth = dateofbirth
 
-    @validates("username")
-    def validate_username(self, key, value):
+    @validates("username")  # type: ignore
+    def validate_username(self, key: Any, value: Any) -> Any:
         """username must contain only letters"""
         if not value.isalpha():
             # sqlalchemy and fastapi mixin
@@ -39,19 +37,3 @@ class User(Base):
             )
 
         return value
-
-
-# MONGODB
-# pylint: disable=E0213
-# class UserModel(Model):
-#     """User model"""
-
-#     username: StrictStr
-#     dateOfBirth: datetime
-
-#     @validator("username")
-#     def check_username(cls, value):
-#         """username must contain only letters"""
-#         if not value.isalpha():
-#             raise ValueError("username must contain only letters")
-#         return value
