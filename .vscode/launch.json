@@ -34,6 +34,21 @@
             ]
         },
         {
+            "name": "FastAPI - CloudSQL",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "envFile": "${workspaceFolder}/.devcontainer/cloudrun.env",
+            "args": [
+                "--app-dir",
+                "./src/",
+                "api:app",
+                "--reload",
+                "--port",
+                "8000"
+            ]
+        },
+        {
             "name": "Python: Debug Tests",
             "type": "python",
             "request": "launch",
