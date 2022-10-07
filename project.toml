@@ -1,0 +1,19 @@
+[project]
+id = "io.buildpacks.bash-script"
+name = "Bash Script"
+version = "1.0.0"
+
+[build]
+
+include = [
+    "/requirements.txt",
+    "/src"
+]
+
+[[build.env]]
+name = "GOOGLE_ENTRYPOINT"
+value = "gunicorn --workers 1 --worker-class uvicorn.workers.UvicornWorker --chdir src api:app"
+
+[[build.env]]
+name = "GOOGLE_RUNTIME_VERSION"
+value = "3.10"
