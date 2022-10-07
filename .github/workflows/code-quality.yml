@@ -16,5 +16,5 @@ jobs:
     - run: black --diff --check $(git ls-files '*.py')
     # - run: pylint --disable=all --enable=unused-import $(git ls-files '*.py')
     - run: pylint --disable=all $(git ls-files '*.py')
-    - run: mypy --strict $(git ls-files '*.py')
-    - run: flake src/ test/
+    - run: mypy $(git ls-files '*.py')
+    - run: flake8 src/ tests/
