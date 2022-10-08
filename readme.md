@@ -132,13 +132,13 @@ Run the microservice with the command:
 
 ## Getting Started
 
-### :hammer: Devlopment
+### :hammer: Development
 
 - [Install Visual Studio Code](https://code.visualstudio.com/download) with [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
 - [Install Docker](https://docs.docker.com/engine/install/) (necessary to run as a container instance)
 - [Open folder](https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container) in container
 
-**more details** is at [development documentation](/docs/development.md)
+**more details** is at [development documentation](docs/Development.md)
 
 ### :bulb: Useful scripts
 
@@ -147,7 +147,7 @@ Run the microservice with the command:
 - Deploy application for preview: `./scripts/preview.sh`
 - Switch preview to production: `./scripts/production.sh`
 
-**more details** is at [scripts documentation](/docs/scripts.md)
+**more details** is at [/docs](/docs) folder
 ## :soon: Coming Soon
 
 - [ ] Pipelines
