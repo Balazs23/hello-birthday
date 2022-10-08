@@ -1,4 +1,4 @@
-# Hello World microservice
+# Hello World microservice :rocket:
 
 <div align="center">
 
@@ -11,17 +11,16 @@
 ![Python: 3.10](https://img.shields.io/badge/python-3.10-informational.svg)
 [![CI](https://github.com/art049/fastapi-odmantic-realworld-example/actions/workflows/ci.yml/badge.svg)](https://github.com/art049/fastapi-odmantic-realworld-example/actions/workflows/ci.yml)
 ![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/Balazs23/a6abaa6f4b8ef5450a7e9fc531c179a3/raw/pytest-coverage-comment__main.json)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 [![mypy: checked](https://img.shields.io/badge/mypy-checked-informational.svg)](http://mypy-lang.org/)
-[![Manager: poetry](https://img.shields.io/badge/manager-poetry-blueviolet.svg)](https://poetry.eustace.io/)
+
 
 </div>
 
 > ### The application codebase using [FastAPI](https://github.com/tiangolo/fastapi) + [SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy) to expose HTTP-based APIs. Current setup is designed supports [Google Cloud Platform](https://cloud.google.com) services and the infrastucture is managed by [Terragrunt](https://terragrunt.gruntwork.io)(IaC).
 
 
-Project Organization
+Project Organization :open_file_folder:
 ------------
 
     │
@@ -105,7 +104,7 @@ Project Organization
     ├── requirements.txt                            <- Requirements file with the list of the libraries needed
     └── test-requirements.txt                       <- Requirements file with the list of the libraries needed for testing
 
-## Consult the API documentation
+## Consult the API documentation :books:
 To consult the API documentation just type the following address in a browser.
 
 ```
