@@ -14,7 +14,7 @@ Cloud SQL provides a cloud-based alternative to local MySQL, PostgreSQL, and SQL
 
 Cloud SQL Auth proxy and Cloud SQL connector libraries for Java and Python - these provide access based on IAM, means no need to configure and store password for the application. The client identified and authorized by it' own service account. For more Cloud SQL function details check [SRE](SRE.md) aspects documentation.
 
-## Infrastucture as Code (Iac)
+## Infrastructure as Code (Iac)
 
 [Terragrunt](https://terragrunt.gruntwork.io) is a thin wrapper that provides extra tools for keeping your configurations [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), working with multiple Terraform modules, and managing remote state. [Terraform](https://www.terraform.io) is an open-source infrastructure as code software tool that enables you to safely and predictably create, change, and improve infrastructure.
 
@@ -52,4 +52,4 @@ Cloud SQL Auth proxy and Cloud SQL connector libraries for Java and Python - the
 1. Run `terragrunt plan-all` to see all the changes you're about to apply.
 1. If the plan looks good, run `terragrunt apply-all`.
 
-You can done this steps also with the builin script: `./scripts/infra-prod.sh`
+You can done this steps also with the built-in script: `./scripts/infra-prod.sh`
