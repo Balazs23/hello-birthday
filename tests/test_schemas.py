@@ -42,10 +42,10 @@ class TestHelloSchema(unittest.TestCase):
                 dateofbirth=(date.today() - timedelta(days=self.timedelta)),
             )
         )
-        # 364
+
         self.assertEqual(
             hello.message,
-            f"Hello, {self.mock_username}! Your birthday is in {self.days_of_year - self.timedelta} day(s)",
+            f"Hello, {self.mock_username}! Your birthday is in {self.days_of_year - self.timedelta} day(s)",  # noqa: E501
         )
 
     def test_hello_not_birthday_years(self) -> None:
@@ -60,10 +60,10 @@ class TestHelloSchema(unittest.TestCase):
                 ),
             )
         )
-        # 364
+
         self.assertEqual(
             hello.message,
-            f"Hello, {self.mock_username}! Your birthday is in {self.days_of_year - self.timedelta} day(s)",
+            f"Hello, {self.mock_username}! Your birthday is in {self.days_of_year - self.timedelta} day(s)",  # noqa: E501
         )
 
 
