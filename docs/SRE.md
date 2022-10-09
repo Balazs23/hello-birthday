@@ -9,7 +9,7 @@ All services are fully-managed by Google!
 - Automatically scales up or down from zero to N depending on traffic, leveraging container image streaming for a fast startup time.
 
     Built to [rapidly scale out to handle all incoming requests](https://cloud.google.com/run/docs/about-instance-autoscaling). A service can rapidly scale up to one thousand container instances, or even more if you request a quota increase. If demand decreases, Cloud Run removes idle containers. If you're concerned about costs or overloading downstream systems, you can limit the maximum number of instances.
-- Traffig management for application revisions
+- Traffic management for application revisions
 
     Every deployment creates a new immutable revision. You can route incoming traffic to the latest revision, roll back to a previous revision, or split traffic to multiple revisions at the same time, [to perform a gradual rollout](https://cloud.google.com/run/docs/rollouts-rollbacks-traffic-migration). This is useful if you want to **reduce the risk of deploying a new revision**. You can start with sending 1% of requests to a new revision, and increase that percentage while monitoring telemetry.
 - Services are regional, automatically replicated across multiple zones.
@@ -74,3 +74,8 @@ Error budget over four weeks would be 3% of 3,663,253 (total requests) which equ
 | 99% of requests faster than 900 ms  | 36,632 |
 
 An SLO of **97% availability** allows a total of **109,897 bad requests** in a span of 4 weeks. 
+
+__Microservice__
+Current application stack is using `Cloud Run` which is configured with the default resource allocations and instance configuration. The cold start takes seconds which affects latency, that can be reduced with raising the [minimum instances](https://cloud.google.com/run/docs/configuring/min-instances) and [concurrency](https://cloud.google.com/run/docs/configuring/concurrency). Application `ping` endpoint can be set as ready health check for instances, it needs further development.
+
+For better overview about the application also should done a performance test, to determine the base numbers for SLO and see where are the weak points and set error budget.

@@ -23,8 +23,8 @@ Later we can increase the traffic to 20,30,40...100%!
 In case of errors, anytime before finalizing the deployment we can roll back to revision `BLUE` using command `scripts/preview.sh --rollback`. After fixing the application, we can start again with a deployment of the current codebase. Safety first!
 
 ### :green_book: Finalize deployment
-After we are confidental of the new version of application running fine, we can set it as revision `BLUE` with command `scripts/preview.sh --production`
+After we are confidential of the new version of application running fine, we can set it as revision `BLUE` with command `scripts/preview.sh --production`
 
 ## Monitoring
 
-Application also provides a "ping" endpoint, which can be used for at least for health check monitoring. This endpoint needs to be improvide, like during request check the database is reachable or not.
+Application also provides a "ping" endpoint, which can be used for at least for health check monitoring. This endpoint needs to be improved, like during request check the database is reachable or not.
