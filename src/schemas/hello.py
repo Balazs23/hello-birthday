@@ -17,8 +17,9 @@ class HelloResponse(BaseSchema):
         def calculate_dates(birthday: date) -> int:
             """calculates birthday in current year"""
             now = date.today()
-            birthday = date(now.year, birthday.month, birthday.day)
-            days_left = (birthday - now.today()).days
+            delta1 = date(now.year, birthday.month, birthday.day)
+            delta2 = date(now.year + 1, birthday.month, birthday.day)
+            days_left = ((delta1 if delta1 >= now else delta2) - now).days
             return abs(days_left)
 
         delta = calculate_dates(user.dateofbirth)
