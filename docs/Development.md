@@ -4,7 +4,7 @@ For better interoperability terms the projects is using Visual Studio Code devco
 
 ## Devcontainer development
 
-All the configurations of the development environment is placed in `.devcontainer` folder. For local testing VSCode is using a [docker-compose](https://docs.docker.com/compose/) file to provide PSQL instance for the application. The `devcontainer.env` file sets all runtime environment variable during the development, `cloudrun.env` is usabe in case for reaching the production SQL instance.
+All the configurations of the development environment is placed in `.devcontainer` folder. For local testing VSCode is using a [docker-compose](https://docs.docker.com/compose/) file to provide PSQL instance for the application. The `devcontainer.env` file sets all runtime environment variable during the development, `cloudrun.env` is usable in case for reaching the production SQL instance.
 
 ### Pre-requisites
 
@@ -16,9 +16,9 @@ All the configurations of the development environment is placed in `.devcontaine
 
 Using builtin VSCode debugger.
 
-- `FastAPI - NoSQL`: Application start without DB access, using SQLite database driver, wirte all data into `test.db` file
+- `FastAPI - NoSQL`: Application start without DB access, using SQLite database driver, write all data into `test.db` file
 - `FastAPI - PSQL`: Application start using PSQL service, which is configured by compose file.
-- `FastAPI - CloudSQL`: Application start using production database access. This requires extra steps, like installing [cloud-sql-proxy](https://github.com/GoogleCloudPlatform/cloud-sql-proxy) setting IAM authentication and provide preauthentication with [gcloud CLI](https://cloud.google.com/sdk/gcloud)
+- `FastAPI - CloudSQL`: Application start using production database access. This requires extra steps, like installing [cloud-sql-proxy](https://github.com/GoogleCloudPlatform/cloud-sql-proxy) setting IAM authentication and provide pre-authentication with [gcloud CLI](https://cloud.google.com/sdk/gcloud)
 - `Python: Debug Tests`: Run opened test, use with`./tests/*.py` files
 
 ### Testing
@@ -57,4 +57,4 @@ You can use the same script: `./scripts/test.sh`
 
 ## Contribute 
 
-For contributing make a fork from reposity, open a fetature branch and the end of the development create a pull request into main repository. You can follow decribed [Gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+For contributing make a fork from repository, open a feature branch and the end of the development create a pull request into main repository. You can follow described [Gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
