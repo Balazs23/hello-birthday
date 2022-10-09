@@ -25,9 +25,6 @@ class _Settings(BaseSettings):
 # Make this a singleton to avoid reloading it from the env everytime
 SETTINGS = _Settings()
 
-# MongoDB
-# EngineD = AIOEngineDependency(mongo_uri=SETTINGS.MONGO_URI)
-
 # PSQL
 
 

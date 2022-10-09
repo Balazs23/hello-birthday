@@ -7,13 +7,6 @@ from sqlalchemy.orm import Session
 
 from core.exceptions import InvalidValueException, UserNotFoundException
 
-# async def get_user_by_username(engine: AIOEngine, username: str) -> UserModel:
-#     """returns user object based on username"""
-#     user = await engine.find_one(UserModel, UserModel.username == username)
-#     if user is None:
-#         raise UserNotFoundException()
-#     return user
-
 
 def get_user_by_username(engine: Session, username: str) -> User:
     """returns user object based on username"""
